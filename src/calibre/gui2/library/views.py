@@ -1518,6 +1518,7 @@ class DeviceBooksView(BooksView):  # {{{
 
     def reverse_sort(self):
         h = self.horizontalHeader()
-        h.setSortIndicator(h.sortIndicatorSection(), 1 - int(h.sortIndicatorOrder()))
+        h.setSortIndicator(
+            h.sortIndicatorSection(), Qt.SortOrder.AscendingOrder if h.sortIndicatorOrder() == Qt.SortOrder.DescendingOrder else Qt.SortOrder.DescendingOrder)
 
 # }}}
